@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700&display=swap');
+
+.details{
+    color: #ffffff;
+    background: #A2D134;
+    border-radius: 6px;
+    border-color: transparent;
+}
+
+.number{
+    position: absolute;
+left: 66.12%;
+right: 22.39%;
+top: 73.15%;
+bottom: 15.44%;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
+
+
+color: #242122;
+}
+.mail{
+    position: absolute;
+left: 83.35%;
+right: 2.3%;
+top: 73.15%;
+bottom: 15.44%;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
+
+
+color: #242122;
+}

@@ -1,0 +1,233 @@
+body{
+  margin: 0px;
+  padding: 0px;
+  background-color: #FFFFFF;
+}
+.logo{
+  /* position: absolute; */
+  width: 162px;
+  height: 63px;
+  left: 50px;
+  top: 40px;
+  margin-top: 10px;
+}
+.hemp{
+  /* position: absolute; */
+width: 314px;
+height: 29px;
+left: 50px;
+top: 166px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 29px;
+display: flex;
+align-items: center;
+text-transform: capitalize;
+
+color: #242122;
+margin-top:31px;
+
+}
+.hello{
+  left: 63.89%;
+  right: 29.58%;
+  top: 19.3%;
+  bottom: 76.78%;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 39px;
+  color: #242122;
+}
+.signin{
+  left: 63.89%;
+    right: 7.85%;
+    top: 23.62%;
+    bottom: 73.47%;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 29px;
+    color: #242122;
+}
+.forgot{
+  /* position: absolute; */
+left: 63.89%;
+right: 16.81%;
+top: 61.11%;
+bottom: 36.88%;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 20px;
+/* identical to box height */
+
+
+color: #242122;
+}
+.remember{
+  /* position: absolute; */
+left: 65.97%;
+right: 26.53%;
+top: 67.74%;
+bottom: 30.05%;
+
+font-family: 'Avenir';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 22px;
+/* identical to box height */
+
+
+color: #242122;
+}
+input[type="submit"] {
+  /* position: absolute; */
+  width: 214px;
+  height: 34px;
+  font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height */
+
+
+color: #FFFFFF;
+  border-radius: 6px;
+  background: #A7BF58;
+  border: none;
+  
+}
+.fix{
+  display: flex;
+  background-color: #fafafa;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  /* padding-bottom: 15px; */
+}
+div .fix p{
+  position: sticky;
+  width: 303px;
+  height: 80px;
+  left: 376px;
+  top: 323px;
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+/* or 167% */
+
+text-align: justify;
+
+color: #000000;
+}
+div .fix img{
+    padding-left: 24px;
+    height: 120px;
+    padding-top: 17px;
+}
+.fix1{
+  display: flex;
+  background-color: #fafafa;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+div .fix1 p{
+  position: sticky;
+  width: 303px;
+  height: 80px;
+  left: 376px;
+  top: 563px;
+  
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  /* or 167% */
+  
+  text-align: justify;
+  
+  color: #000000;
+}
+
+div .fix1 img{
+    padding-left: 48px;
+    height: 120px;
+    padding-top: 17px;
+}
+
+.fix2{
+  display: flex;
+  background-color: #fafafa;
+  border-radius: 12px;
+  margin-top: 10px;
+  padding-bottom: 15px;
+}
+div .fix2 p{
+  position: sticky;
+  width: 303px;
+  height: 80px;
+  left: 376px;
+  top: 563px;
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  /* or 167% */
+
+  text-align: justify;
+
+  color: #000000;
+}
+
+div .fix2 img{
+  padding-left: 72px;
+  height: 120px;
+  padding-top: 17px;
+}
+div .form-control{
+  border: 0px solid #ccc;
+}
+.eye{
+  position: absolute;right: 10px;padding-top: 6px
+}
+header{
+    position: relative;
+    padding-inline: 50px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+}
+div .loginutside{
+  position: absolute;
+  width: 580px;
+  height: 600px;
+  left: 769px;
+  top: 0px;
+}
+div .inside{
+  width: 290px;
+  height: 615px;
+  left: 100px;
+  top: 0px;
+  padding-inline: 39px;
+  padding-top: 80px;
+}
+

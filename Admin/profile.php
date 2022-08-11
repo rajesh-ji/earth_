@@ -26,8 +26,8 @@
                     <div class="col-md-8">
                         <nav>
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab"  href="profile.php" role="tab" aria-controls="nav-home" aria-selected="true">Basic Information</a>
-                                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="farmerCenters.php" role="tab" aria-controls="nav-profile" aria-selected="false">Nearest Farmer Centers</a>
+                                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab"  href="" role="tab" aria-controls="nav-home" aria-selected="true" onclick="profile()">Basic Information</a>
+                                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="" role="tab" aria-controls="nav-profile" aria-selected="false" onclick="center()">Nearest Farmer Centers</a>
 
                             </div>
                         </nav>

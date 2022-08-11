@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/wallet.css">
     <link rel="stylesheet" href="css/profile.css">
+   
     <title>Earth Merchant</title>
   </head>
   <body>

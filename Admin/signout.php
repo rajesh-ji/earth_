@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/wallet.css">
     <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/signout.css">
     <title>Earth Merchant</title>
   </head>
   <body>
@@ -29,22 +30,7 @@
                               <img src="images/Group.png" alt="image" >
                             </div>
                         </div>
-                        <div class="row" style="
-                            position: absolute;
-                            width: 563px;
-                            height: 36px;
-                            left: 454px;
-                            top: 245px;
-                            font-family: 'Montserrat';
-                            font-style: normal;
-                            font-weight: 600;
-                            font-size: 24px;
-                            line-height: 150%;
-                        /* identical to box height, or 36px */
-                            display: flex;
-                            align-items: center;
-                            color: #242122;
-                        ">
+                        <div class="row thanku">
                             
                               <p>Thank you for being are part of our journey</p>
                               <p style="margin-left:112px;" >We’ll be waiting for you</p>
@@ -52,27 +38,8 @@
                         </div>
                         <div class="row">
                           <div class="col" style="top: 290px;">
-                              <button style="
-                                  box-sizing: border-box;
-                                  position: absolute;
-                                  width: 160px;
-                                  height: 38px;
-                                  left: 540px;
-                                  /* top: 467px; */
-                                  border: 1px solid #A2D134;
-                                  border-radius: 6px;
-                                  color: #A2D134;
-                              ">Go To Website</button>
-                              <button style="position: absolute;
-                                  width: 172px;
-                                  height: 38px;
-                                  left: 710px;
-                                  /* top: 467px; */
-
-                                  background: #A2D134;
-                                  border-radius: 6px;
-                                  color: #FFFFFF;
-                                  border: none;">Sign in Again</button>
+                              <button type="submit" class="website">Go To Website</button>
+                              <button type="submit" class="signin" style="">Sign in Again</button>
                           </div>
                         </div>
                         <div class="row" >

@@ -1,0 +1,39 @@
+.thanku{
+                            position: absolute;
+                            width: 563px;
+                            height: 36px;
+                            left: 454px;
+                            top: 245px;
+                            font-family: 'Montserrat';
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 24px;
+                            line-height: 150%;
+                        /* identical to box height, or 36px */
+                            display: flex;
+                            align-items: center;
+                            color: #242122;
+}
+.website{
+    box-sizing: border-box;
+    position: absolute;
+    width: 160px;
+    height: 38px;
+    left: 540px;
+    /* top: 467px; */
+    border: 1px solid #A2D134;
+    border-radius: 6px;
+    color: #A2D134;
+}
+.signin{
+    position: absolute;
+                                  width: 172px;
+                                  height: 38px;
+                                  left: 710px;
+                                  /* top: 467px; */
+
+                                  background: #A2D134;
+                                  border-radius: 6px;
+                                  color: #FFFFFF;
+                                  border: none;
+}

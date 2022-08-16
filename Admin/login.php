@@ -26,9 +26,6 @@ if(!isset($_SESSION['login_id'])==''){
           $_SESSION['user_id'] = $rd['id'];
           // echo $_SESSION['login_id'];
           // echo $_SESSION['user_id'];
-        // $last_login = date('Y-m-d h:i:s');
-        // $id = $row['id'];
-        // $query = mysqli_query($conn,"update users set last_login = '$last_login' where id = '$id'");
                header('Location: dashbord.php');
              die;
             }else{
@@ -96,7 +93,7 @@ if(!isset($_SESSION['login_id'])==''){
             <div class="inside">
             <p class="hello">Hello!</p>
             <p class="signin">Signin to your account</p>
-            <form action="login.php" method="POST">
+            <form class="form_data" action="login.php" method="POST">
             <?php if(isset($_SESSION['error'])){
                         echo "<p style='color:red;'>".$_SESSION['error']."</p>";
                         $_SESSION['error'] = '';
@@ -118,7 +115,7 @@ if(!isset($_SESSION['login_id'])==''){
                     <label for="password" class="" style="color: #BAB9B9;">Password</label>
                     <div style="position: relative;display: flex;">
                     <input type="password" name="password" id="id_password" class="form-control " placeholder="Enter password..." required >
-                    <div class="eye"><i class="fa fa-eye" id="togglePassword" style="color: #A7BF58;"></i></div>
+                    <div class="password-visibility"><i class="fa fa-eye" id="togglePassword" style="color: #A7BF58;"></i></div>
                 </div> 
                 </div>
                 <div class="forgot"><p>Forgot your password?<a href="http://" style="color:#A7BF58">Reset here</a></p></div>

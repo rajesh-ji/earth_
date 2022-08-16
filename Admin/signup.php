@@ -1,4 +1,3 @@
-
 <?php
 if(isset($_POST['submit'])){
     include('config.php');
@@ -74,7 +73,7 @@ if(isset($_POST['submit'])){
             <div class="inside" style="padding-top: 60px;">
             <p class="hello">Hello!</p>
             <p class="signin">Signup to your account</p>
-            <form action="signup.php" method="POST">
+            <form class="form_data" action="signup.php" method="POST">
             <?php if(isset($_SESSION['mgs'])){
                         echo "<p style='color:red;'>".$_SESSION['mgs']."</p>";
                         $_SESSION['mgs'] = '';
@@ -93,6 +92,9 @@ if(isset($_POST['submit'])){
                             <input type="password" name="password" class="form-control border-secondary id_password" id="id_password" onkeyup="return passwordChanged();" placeholder="create password..." required style="border: 0px solid #ccc;">
                             <div  class="password-visibility "><i class="fa fa-eye" id="togglePassword" style="color: #A7BF58;"></i></div>
                         </div>
+                        <span><img src="images/tick.png" alt=""></span> <span><img src="images/1 upper case.png" alt=""></span>
+                        <span><img src="images/tick.png" alt=""></span> <span><img src="images/1 special char.png" alt=""></span>
+                        <span><img src="images/tick.png" alt=""></span> <span><img src="images/Min 8 chars.png" alt=""></span>
                         <span id="strength"></span>
                     </div>
                     <div class="form-group">
@@ -155,7 +157,7 @@ if(isset($_POST['submit'])){
         } else if (mediumRegex.test(pwd.value)) {
             strength.innerHTML = '<span style="color:orange">Medium!</span>';
         } else {
-            strength.innerHTML = '<span style="color:red">Hey your Password is Weak!</span>';
+            strength.innerHTML = '<span style="color:red">Password is Weak!</span>';
         }
     }
 </script>

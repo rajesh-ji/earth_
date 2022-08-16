@@ -91,7 +91,7 @@ color: #242122;
 }
 input[type="submit"] {
   /* position: absolute; */
-  width: 214px;
+  width: 293px;
   height: 34px;
   font-family: 'Montserrat';
 font-style: normal;
@@ -202,7 +202,7 @@ div .fix2 img{
 div .form-control{
   border: 0px solid #ccc;
 }
-.eye{
+.password-visibility{
   position: absolute;right: 10px;padding-top: 6px
 }
 header{
@@ -229,5 +229,8 @@ div .inside{
   top: 0px;
   padding-inline: 39px;
   padding-top: 80px;
+}
+.form_data{
+  width:293px;
 }
 

@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700&display=swap');
+.walletimg{
+    width: 348px;
+    height: 80px;
+   
+    
+    /* Black&amp;White/White */
+    
+    background: #FFFFFF;
+    box-shadow: 0px 3.5px 5.5px rgba(0, 0, 0, 0.02);
+    border-radius: 15px;
+}
+.image-fluid{
+    float: right;
+    margin-top: 19px;
+}
+.imageset{
+    margin-right: 1rem;
+    margin-left: 20px;
+}
+#sidebar ul li:hover{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    width: 213px;
+height: 54px;
+    background: #FFFFFF;
+box-shadow: 0px 3.5px 5.5px rgba(0, 0, 0, 0.02);
+border-radius: 15px;
+}
+
+#sidebar ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+#sidebar ul li{
+    margin-top: 15px;
+    margin-left: 1.6rem;
+    
+}
+.active{
+    font-weight: 600;
+font-size: 16px;
+line-height: 150%;
+    width: 213px;
+    height: 54px;
+        background: #FFFFFF;
+    box-shadow: 0px 3.5px 5.5px rgba(0, 0, 0, 0.02);
+    border-radius: 15px;
+}
+
+
+/*div .demo{
+    position: absolute;
+    width: 728px;
+    height: 229.38px;
+    background: #FFFFFF;
+    box-shadow: 0px 3.5px 5.5px rgba(0, 0, 0, 0.02);
+    border-radius: 15px;
+}
+div .demos{
+    
+   
+    position: absolute;
+    float: right;
+    width: 344.45px;
+    height: 218px;
+    background: #FFFFFF;
+    box-shadow: 0px 1.84337px 2.89673px rgba(0, 0, 0, 0.02);
+    border-radius: 7.90017px;
+
+}*/
+
+.nav-ul{
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.outsidegreen{
+    background: #FFFFFF;
+    box-shadow: 0px 3.5px 5.5px rgba(0, 0, 0, 0.02);
+    border-radius: 15px;
+}
+.insidegreen{
+    background:#A2D134;width: 284.25px ; margin: 20px; float:right;
+    height: 201.74px;
+    border-radius:12px !important;
+}
+.headingreen{
+    background: #FFFFFF;
+    box-shadow: 0px 3.5px 5.5px rgba(0, 0, 0, 0.02); width: 344.45px;
+    height: 238px;
+    border-radius: 15px;
+}
+.headingreenin{
+    width: 356.01px;
+    height: 191.73px;
+    top:15px;
+    background: linear-gradient(360deg, rgba(162, 209, 52, 0) 0%, #A2D134 100%);
+    border-radius: 6.32014px;
+}
+/* search field css */
+.searchform input{
+    background: #FFFFFF;
+    border: 0.5px solid #242122;
+    border-radius: 15px;
+    background-image: url('images/search.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    
+}
+.searchform i{
+    position: absolute;
+    left: 69%;
+    top: 10px;
+    color: #A2D134;
+}
+ul li .pages{
+    color: #A2D134; 
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 150%;
+}
+ul li .dashboard{
+    color: black; font-weight: 400;
+    font-size: 12px;
+    line-height: 150%
+}
+
+/* chart css */
+.outsidegraph{
+    position: absolute;
+    width: 1040px;
+    height: 380px;
+    background: #FFFFFF;
+    box-shadow: 0px 3.5px 5.5px rgba(0, 0, 0, 0.02);
+    border-radius: 15px;
+}
+div .outsidegraph h4{
+    width: 153.47px;
+    height: 21.35px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 140%;
+    color: #2D3748;
+}
+/* div .outsidegraph p{
+    width: 134.5px;
+    height: 16.65px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 140%;
+    color: #A2D134;
+} */
+
+/* formpage content */
+div .form{
+    /* position: absolute;
+    width: 1105px;*/
+    height: 760px; 
+    background: #FFFFFF;
+    box-shadow: 0px 3.5px 5.5px rgba(0, 0, 0, 0.02);
+    border-radius: 15px;
+    
+}
+label{
+    /* position: absolute; */
+    /* width: 164px; */
+    height: 17px;
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
+
+
+color: #BAB9B9;
+}
+div form input[type='text']{
+    /* position: absolute; */
+    /* width: 293px; */
+    height: 40px;
+    background: #FAFAFA;
+    border-radius: 10px;
+    border:none;
+}
+div form input[type='number']{
+    /* position: absolute; */
+    /* width: 293px; */
+    height: 40px;
+    background: #FAFAFA;
+    border-radius: 10px;
+    border:none;
+}
+div form input[type='email']{
+    /* position: absolute; */
+    /* width: 293px; */
+    height: 40px;
+    background: #FAFAFA;
+    border-radius: 10px ;
+    border:none;
+}
+div form input[type='date']{
+    /* position: absolute; */
+    /* width: 293px; */
+    height: 40px;
+    background: #FAFAFA;
+    border-radius: 10px ;
+    border:none;
+}
+div form select[type="text"]{
+    height: 40px;
+    background: #FAFAFA;
+    border-radius: 10px ;
+    border:none;
+}
+.progrss{
+    /* position: absolute; */
+/* width: 1105px; */
+height: 56px;
+left: 293px;
+top: 111px;
+
+background: #FFFFFF;
+box-shadow: 0px 3.5px 5.5px rgba(0, 0, 0, 0.05);
+}
+/* .info a:hover{ color:none;} */
+.generalinfo{
+    top:10px;
+}
+.info{
+    color:#242122;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+}
+.heading1{
+    color:#A2D134;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+}
+.save{
+    float: right;
+    border: 0;
+    line-height: 30px;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #FFFFFF;
+    /* text-shadow: 1px 1px 1px #000; */
+    border-radius: 6px;
+    background-color:#A2D134;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 12px
+}
+a .heading{
+    color: #A2D134 !important; 
+}
+h6{
+    width: 129px;
+    height: 20px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 140%;
+    color: #242122;
+}
+.progress-bar{
+    width: 25%;
+    background-color:#56BD5B;
+}
+.check{
+    margin-top: 1em;
+}
+
+.back{
+    float: left;
+    line-height: 30px;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #A2D132;
+    /* text-shadow: 1px 1px 1px #000; */
+    border-radius: 6px;
+    background-color: #FFFFFF;;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 12px;
+    border: 1px solid #A2D134;
+    /* margin-left: 43px; */
+}
+/* div p{
+    width: 348px;height: 17px;font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    identical to box height
+
+    text-transform: capitalize;
+
+    color: #BAB9B9;
+} */
+.signoutimg{
+    position: absolute;
+    width: 167px;
+    height: 167px;
+    left: 637px;
+    top: 105px;
+    background: #FBFDF7;
+}

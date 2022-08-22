@@ -39,62 +39,18 @@
             </tr>
         </thead>
         <tbody>
+            <?php $query = mysqli_query($conn, "select * from add_unit ");
+                    while($rd=mysqli_fetch_assoc($query)){?>
             <tr>
-                <td>1</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td>
+                <td><?php echo $rd['id']?></td>
+                <td><?php echo $rd['unit_name']?></td>
+                <td><?php echo $rd['unit_loc']?></td>
+                <td><?php echo $rd['num_farmer']?></td>
+                <td><?php echo $rd['mem_since']?></td>
+                <td>High</td>
                 <td><i class="fa fa-ellipsis-v" aria-hidden="true" data-toggle="modal" data-target="#myModal"></i></td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td>Accountant</td>
-                <td>Tokyo</td>
-                <td>63</td>
-                <td>2011-07-25</td>
-                <td>$170,750</td>
-                <td><i class="fa fa-ellipsis-v" aria-hidden="true"></i></td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td>
-                <td><i class="fa fa-ellipsis-v" aria-hidden="true"></i></td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Accountant</td>
-                <td>Tokyo</td>
-                <td>63</td>
-                <td>2011-07-25</td>
-                <td>$170,750</td>
-                <td><i class="fa fa-ellipsis-v" aria-hidden="true"></i></td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td>
-                <td><i class="fa fa-ellipsis-v" aria-hidden="true"></i></td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>Accountant</td>
-                <td>Tokyo</td>
-                <td>63</td>
-                <td>2011-07-25</td>
-                <td>$170,750</td>
-                <td><i class="fa fa-ellipsis-v" aria-hidden="true"></i></td>
-            </tr>
-            
-          
+            <?php } ?>   
         </tbody>
        
     </table>

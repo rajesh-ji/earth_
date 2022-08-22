@@ -141,3 +141,11 @@ thead{
     position: relative;
     right: 50%;
 }
+.modal-content{
+    left: 131%;
+    width: 34%;
+    margin-top: 31%;
+}
+div .modal-body .btn{
+    margin-bottom: 6px;
+}

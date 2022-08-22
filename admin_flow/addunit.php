@@ -1,3 +1,18 @@
+<?php 
+    if(isset($_POST['submit'])){
+        
+        include('config.php');
+         //echo "<script>alert('submit called');</script>";
+        extract($_POST);
+        $query=  mysqli_query($conn, "insert into add_unit (unit_name,unit_loc,num_farmer) VALUES ('$unit_name','$unit_loc','$num_farmer')");
+       // $count = mysqli_num_rows($query);
+        if($query>0){
+            //$rd = mysqli_fetch_assoc($query);
+            header('Location:processunit.php'); 
+        }
+        
+    }
+?>
 <?php include 'header.php'; ?>
    <!-- Page Content Holder -->
    <div class="container-fluid ">
@@ -37,19 +52,19 @@
                     </div>
                 </div>
 
-                <form class="check" action="" method="post" id="my-form">
+                <form class="check" action="addunit.php" method="post" id="my-form">
                 <div class="row">
                     <div class="form-group col-md-4" >
                         <label for="name" >Unit Name</label>
-                        <input type="text" class="form-control" name="name" placeholder="" name="name" >
+                        <input type="text" class="form-control" placeholder="" name="unit_name" >
                     </div>
                     <div class="form-group col-md-4">
                         <label for="pswd" >Location</label>
-                        <input type="text" class="form-control" placeholder="" name="number" >
+                        <input type="text" class="form-control" placeholder="" name="unit_loc" >
                     </div>
                     <div class="form-group col-md-4">
                         <label for="pswd" >Number of farmers</label>
-                        <input type="email" class="form-control" placeholder="" name="email" >
+                        <input type="number" class="form-control" placeholder="" name="num_farmer" >
                     </div>
                 </div>  
                  

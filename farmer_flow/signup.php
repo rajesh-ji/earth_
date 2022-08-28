@@ -89,7 +89,7 @@ if(isset($_POST['submit'])){
                     <div class="form-group">
                         <label for="password" class="" style="color: #BAB9B9;">Create Password</label>
                         <div style="position: relative;display: flex;">
-                            <input type="password" name="password" class="form-control border-secondary id_password" id="id_password" onkeyup="return passwordChanged();" placeholder="create password..." required style="border: 0px solid #ccc;">
+                            <input type="password" name="password" class="form-control border-secondary id_password" onChange="onChange()" id="id_password" onkeyup="return passwordChanged();" placeholder="create password..." required style="border: 0px solid #ccc;">
                             <div  class="password-visibility "><i class="fa fa-eye" id="togglePassword" style="color: #A7BF58;"></i></div>
                         </div>
                         <span><img src="images/tick.png" alt=""></span> <span><img src="images/1 upper case.png" alt=""></span>
@@ -100,7 +100,7 @@ if(isset($_POST['submit'])){
                     <div class="form-group">
                         <label for="password" class="" style="color: #BAB9B9;">Confirm Password</label>
                         <div style="position: relative;display: flex;">
-                            <input type="password" name="confirm_pass" class="form-control border-secondary id_password" id="confirm_pass" placeholder="re-type password..." required style="border: 0px solid #ccc;">
+                            <input type="password" name="confirm_pass" class="form-control border-secondary id_password" onChange="onChange()" id="confirm_pass" placeholder="re-type password..." required style="border: 0px solid #ccc;">
                             <div  class="password-visibility "><i class="fa fa-eye" id="togglePassword1" style="color: #A7BF58;"></i></div>
                         </div>                    
                     </div>
@@ -116,6 +116,7 @@ if(isset($_POST['submit'])){
             </form>
         </div>
 </div>
+<!-- password eye view toggle start  -->
 <script>
     $(function() {
     $('.form-group').find('.id_password').each(function(index, input) {
@@ -143,7 +144,8 @@ if(isset($_POST['submit'])){
     });
 });
 </script>
-<!-- password strength-->
+<!-- password eye view toggle end  -->
+<!-- password strength start-->
 <script>
     function passwordChanged() {
         var strength = document.getElementById('strength');
@@ -161,5 +163,19 @@ if(isset($_POST['submit'])){
         }
     }
 </script>
+<!-- password strength end-->
+<!-- password and confirm password validator start -->
+<script>
+    function onChange() {
+        const password = document.querySelector('input[name=password]');
+        const confirm_pass = document.querySelector('input[name=confirm_pass]');
+        if (confirm_pass.value === password.value) {
+            confirm_pass.setCustomValidity('');
+        } else {
+            confirm_pass.setCustomValidity('Passwords do not match');
+        }
+        }
+</script>
+<!-- password and confirm password validator end -->
 </body>
 </html>

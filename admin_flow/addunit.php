@@ -4,11 +4,11 @@
         include('config.php');
          //echo "<script>alert('submit called');</script>";
         extract($_POST);
-        $query=  mysqli_query($conn, "insert into add_unit (unit_name,unit_loc,num_farmer) VALUES ('$unit_name','$unit_loc','$num_farmer')");
+        $query=  mysqli_query($conn, "insert into add_unit (f_name,l_name) VALUES ('$f_name','$l_name')");
        // $count = mysqli_num_rows($query);
         if($query>0){
             //$rd = mysqli_fetch_assoc($query);
-            header('Location:processunit.php'); 
+            header('Location:hemplex.php'); 
         }
         
     }
@@ -36,7 +36,7 @@
             </div>
             <ul class="nav-ul" style="padding-left: 0px;">
                 <li>
-                    <a class="pages" href="" >Processing Units <span>/</span> </a><a class="dashboard" href="" >Add Unit</a>
+                    <a class="pages" href="" >Hemplex <span>/</span> </a><a class="dashboard" href="" >Add Unit</a>
                 </li>
             </ul>
             
@@ -55,16 +55,30 @@
                 <form class="check" action="addunit.php" method="post" id="my-form">
                 <div class="row">
                     <div class="form-group col-md-4" >
-                        <label for="name" >Unit Name</label>
-                        <input type="text" class="form-control" placeholder="" name="unit_name" >
+                        <label for="name" >First Name</label>
+                        <input type="text" class="form-control" placeholder="" name="f_name" >
+                    </div>
+                    <div class="form-group col-md-4" >
+                        <label for="name" >Last Name</label>
+                        <input type="text" class="form-control" placeholder="" name="l_name" >
+                    </div>
+                    <div class="form-group col-md-4" >
+                        <label for="num" >Phone Number</label>
+                        <input type="text" class="form-control" placeholder="" name="phone_num" >
+                    </div>
+                </div>    
+                <div class="row">
+                    <div class="form-group col-md-4" >
+                        <label for="email" >Email</label>
+                        <input type="email" class="form-control" placeholder="" name="email" >
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="pswd" >Location</label>
-                        <input type="text" class="form-control" placeholder="" name="unit_loc" >
+                        <label hidden for="pswd" >Location</label>
+                        <input type="hidden" class="form-control" placeholder="" name="unit_loc" >
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="pswd" >Number of farmers</label>
-                        <input type="number" class="form-control" placeholder="" name="num_farmer" >
+                        <label hidden for="pswd" >Number of farmers</label>
+                        <input type="hidden" class="form-control" placeholder="" name="num_farmer" >
                     </div>
                 </div>  
                  

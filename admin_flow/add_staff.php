@@ -4,11 +4,11 @@
         include('config.php');
          //echo "<script>alert('submit called');</script>";
         extract($_POST);
-        $query=  mysqli_query($conn, "insert into add_farmer (name,unit_name,loc) VALUES ('$name','$unit_name','$loc')");
+        $query=  mysqli_query($conn, "insert into add_staff (f_name,l_name,phone_num,email) VALUES ('$f_name','$l_name','$phone_num','$email')");
        // $count = mysqli_num_rows($query);
         if($query>0){
             //$rd = mysqli_fetch_assoc($query);
-            header('Location:farmers.php'); 
+            header('Location:staff.php'); 
         }
         
     }
@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col clearfix mt-3">
                     <ul class="nav-ul float-left" style="padding-left: 0px;">
-                        <li ><a class="pages" href="" >Pages <span>/</span> </a><a class="dashboard" href="" >Processing Units</a></li>
+                        <li ><a class="pages" href="" >Pages <span>/</span> </a><a class="dashboard" href="" >Staff</a></li>
                         
                     </ul>
                     
@@ -36,7 +36,7 @@
             </div>
             <ul class="nav-ul" style="padding-left: 0px;">
                 <li>
-                    <a class="pages" href="" >Processing Units <span>/</span> </a><a class="dashboard" href="" >Add Farmer</a>
+                    <a class="pages" href="" >Hemplex<span>/</span> </a><a class="dashboard" href="" >Add Staff</a>
                 </li>
             </ul>
             
@@ -44,7 +44,7 @@
             <div class="col-md-12 unit_form">
                 <div class="row progrss">
                     <div class="col-md-8 generalinfo">
-                        <h4 class="info" >Add Farmer</h4>
+                        <h4 class="info" >Add Staff</h4>
                     </div>
                     <div class="col-md-4 ">
                         <a href=""><input class="btn cancel " type="submit" name="" id="" value="cancel" ></a>
@@ -52,19 +52,33 @@
                     </div>
                 </div>
 
-                <form class="check" action="add_farmers.php" method="post" id="my-form">
+                <form class="check" action="add_staff.php" method="post" id="my-form">
                 <div class="row">
                     <div class="form-group col-md-4" >
-                        <label for="name" >Farmer Name</label>
-                        <input type="text" class="form-control" name="name" placeholder="" name="name" >
+                        <label for="name" >First Name</label>
+                        <input type="text" class="form-control" placeholder="" name="f_name" >
+                    </div>
+                    <div class="form-group col-md-4" >
+                        <label for="lname" >Last Name</label>
+                        <input type="text" class="form-control" placeholder="" name="l_name" >
+                    </div>
+                    <div class="form-group col-md-4" >
+                        <label for="num" >Phone Number</label>
+                        <input type="text" class="form-control" placeholder="" name="phone_num" >
+                    </div>
+                </div>    
+                <div class="row">
+                    <div class="form-group col-md-4" >
+                        <label for="email" >Email</label>
+                        <input type="email" class="form-control" placeholder="" name="email" >
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="pswd" >Unit Name</label>
-                        <input type="text" class="form-control" placeholder="" name="unit_name" >
+                        <label hidden for="pswd" >Location</label>
+                        <input type="hidden" class="form-control" placeholder="" name="unit_loc" >
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="pswd" >Location</label>
-                        <input type="text" class="form-control" placeholder="" name="loc" >
+                        <label hidden for="pswd" >Number of farmers</label>
+                        <input type="hidden" class="form-control" placeholder="" name="num_farmer" >
                     </div>
                 </div>  
                  

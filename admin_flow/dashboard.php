@@ -9,7 +9,7 @@
                     </ul>
                     
                     <form class="form-inline float-right searchform">
-                        <input style="" class="form-control " type="search" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search" aria-label="Search">
+                        <input class="form-control " type="search" id="live_search" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" aria-label="Search">
                         <i class="fa fa-search" aria-hidden="true"></i>
                         <a href=""><img style="margin-left:20px"src="images/bell.png" alt=""></a>
                         <a href=""><img style="margin-left:20px; margin-right:20px " src="images/setting.png" alt=""></a>
@@ -23,13 +23,26 @@
                 
                     <div class="row">
                         <div class="col walletimg clearfix " style="margin-right:30px">
+                                <?php
+                                    $qt = mysqli_query($conn,"SELECT count(*) as abc from add_farmer");
+                                    $row = mysqli_fetch_assoc($qt);
+                                    $record = $row['abc']; 
+                                ?>
                             <img class="image-fluid" src="images/Icon.png" alt="" width="45" height="45" >
+                            <div style="margin-top:30px;"><h6>Total Farmers: <?php  echo $record;?> </h6></div>
                         </div>
                         <div class="col walletimg " style="margin-right:30px">
+                                <?php
+                                    $qt = mysqli_query($conn,"SELECT count(*) as abc from add_unit");
+                                    $row = mysqli_fetch_assoc($qt);
+                                    $record = $row['abc']; 
+                                ?>
                             <img class="image-fluid" src="images/Icon.png" alt="" width="45" height="45" >
+                            <div style="margin-top:30px;"><h6>Total Hemplex: <?php  echo $record;?> </h6></div>
                         </div>
                         <div class="col walletimg " > 
                             <img class="image-fluid" src="images/Icon.png" alt="" width="45" height="45" >
+                            <div style="margin-top:30px;"><h6>Farmer with No Hemplex:</h6></div>
                         </div>
 			        </div>
                     

@@ -37,7 +37,7 @@
                         
                     </li>
                     <li>
-                        <a href="processunit.php"><img class="imageset" src="images/sidebar/hexagons.png" width="30px"  height="30px" alt="">Process Units</a>
+                        <a href="hemplex.php"><img class="imageset" src="images/sidebar/hexagons.png" width="30px"  height="30px" alt="">Hemplex</a>
                     </li>
 
                     <li>

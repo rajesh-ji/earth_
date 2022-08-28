@@ -14,7 +14,7 @@
                         <a href=""><img style="margin-left:20px"src="images/bell.png" alt=""></a>
                         <a href=""><img style="margin-left:20px; margin-right:20px " src="images/setting.png" alt=""></a>
                     </form>
-                    
+                    <a href="add_staff.php"> <input type="button" class="btn add_staff" id="edit" value="Add Staff" ></a>
                     <input class="btn filter_s" type="submit" name="" id="" value="Filters" >
                     <img class="" src="images/filter.png" alt="" style="margin: -29px;">
                     
@@ -34,21 +34,14 @@
             </tr>
         </thead>
         <tbody>
+        <?php $query = mysqli_query($conn, "select * from add_staff ");
+                    while($rd=mysqli_fetch_assoc($query)){?>
             <tr>
-                <td>1</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>    
+                <td><?php echo $rd['id']?></td>
+                <td><?php echo $rd['f_name']?></td>
+                <td><?php echo $rd['l_name']?></td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td>Accountant</td>
-                <td>Tokyo</td>  
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-            </tr>
+            <?php } ?>   
         </tbody>
        
     </table>

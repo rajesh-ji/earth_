@@ -40,28 +40,29 @@ height:500px
     width: 152% !important;
 }
 .add_unit{
-    margin: 13px;
+   
+}
+.add_staff{
     position: absolute;
     width: 130px;
     height: 35px;
-    left: 557px;
-    top: -12px;
+    left: 456px;
+    top: 0px;
     background: #A7BF58;
     border-radius: 6px;
-    margin: 13px;
+    /* margin: 13px; */
     color: #ffffff;
     border-color: transparent;
     float: right;
-
 }
 .filter{
-    margin-left: 290px;
+    margin-left: 477px;
     box-sizing: border-box;
     /* position: absolute; */
     width: 101px;
     height: 35px;
-    left: 994px;
-    top: 33px;
+    left: 1010px;
+    /* top: 29px; */
     border: 1px solid #A2D134;
     border-radius: 6px;
     color: #000000;

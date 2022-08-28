@@ -69,7 +69,7 @@
                 <div class="row">
                     <div class="form-group col-md-8" >
                         <label for="address" >Address</label>
-                        <input type="text" class="form-control" placeholder="" name="address" >
+                        <input type="text" class="form-control" placeholder="" name="address" id="searchTextField" >
                     </div>
                 </div>
                 <div class="row">
@@ -133,4 +133,12 @@
         document.getElementById("myForm").submit();
         alert("submitted");
     }
+</script> -->
+<!-- <script>
+    function initialize() {
+  var input = document.getElementById('searchTextField');
+  new google.maps.places.Autocomplete(input);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
 </script> -->

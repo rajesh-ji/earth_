@@ -86,5 +86,14 @@
                 }
                 });
 </script>
+
+<script type="text/javascript">
+            $(document).ready(function() {
+                oTable = $('#example').DataTable();  
+                $('#myInputTextField').keyup(function(){
+                oTable.search($(this).val()).draw();
+                })
+            }); 
+    </script>   
 </body>
 </html>

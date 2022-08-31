@@ -14,7 +14,7 @@ if(!isset($_SESSION['login_id'])==''){
      // echo $sql = "select *from users where email = '$email' and role_id  = '1'  ";
        
         
-        $result = mysqli_query($conn, "select *from users where email = '$email' and role_id  = '1' ");
+        $result = mysqli_query($conn, "select *from users where email = '$email' and role_id  = '$login_with' ");
         $count = mysqli_num_rows($result);
        
         if($count>0){
@@ -26,7 +26,7 @@ if(!isset($_SESSION['login_id'])==''){
           $_SESSION['user_id'] = $rd['id'];
           // echo $_SESSION['login_id'];
           // echo $_SESSION['user_id'];
-               header('Location: dashbord.php');
+               header('Location: dashboard.php');
              die;
             }else{
                 $_SESSION['error'] = "Password missmatch !";
@@ -123,7 +123,7 @@ if(!isset($_SESSION['login_id'])==''){
                     <label> <input type="checkbox" name="remember" value="remember" >  Remember Me</label>
                 </div>
                 <div class="form-group">
-                    <input type="submit" name="submit" id="login" value="Login">
+                    <input class="btn" type="submit" name="submit" id="login" value="Login">
                 </div>
                 <div class="forgot"><p >New to EM? <a href="signup.php" style="color:#A7BF58">Create Account</a></p></div>
             </form>

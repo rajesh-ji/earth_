@@ -25,7 +25,7 @@
                     </ul>
                     
                     <form class="form-inline float-right searchform">
-                        <input style="" class="form-control " type="search" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search" aria-label="Search">
+                        <input  class="form-control " type="search" placeholder="Search" aria-label="Search" style="text-indent:30px;">
                         <i class="fa fa-search" aria-hidden="true"></i>
                         <a href=""><img style="margin-left:20px"src="images/bell.png" alt=""></a>
                         <a href=""><img style="margin-left:20px; margin-right:20px " src="images/setting.png" alt=""></a>

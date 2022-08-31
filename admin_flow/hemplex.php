@@ -10,7 +10,7 @@
                     </ul>
                     
                     <form class="form-inline float-right searchform">
-                        <input class="form-control" type="search" id="myInput" onkeyup="myFunction()" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" aria-label="Search">
+                        <input class="form-control" type="search" id="myInputTextField" placeholder="Search" aria-label="Search" style="text-indent:30px;">
                         <i class="fa fa-search" aria-hidden="true"></i>
                         <a href=""><img style="margin-left:20px"src="images/bell.png" alt=""></a>
                         <a href=""><img style="margin-left:20px; margin-right:20px " src="images/setting.png" alt=""></a>
@@ -73,26 +73,4 @@
 
 <?php include 'footer.php' ?>
 
-    <script type="text/javascript">
-       function myFunction() {
-            // Declare variables
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("example");
-            tr = table.getElementsByTagName("tr");
-
-            // Loop through all table rows, and hide those who don't match the search query
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[0];
-                if (td) {
-                txtValue = td.textContent || td.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
-                }
-                }
-            }
-            }
-    </script>   
+    

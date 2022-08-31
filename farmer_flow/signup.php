@@ -13,14 +13,14 @@ if(isset($_POST['submit'])){
        $_SESSION['mgs'] = 'This username already exists!';
     }else
         {
-            $query=  mysqli_query($conn, "insert into users(name,email,password,confirm_pass) values('$username','$email','$password','$confirm_pass')");
+            $query=  mysqli_query($conn, "insert into users(name,email,password,confirm_pass,role_id) values('$username','$email','$password','$confirm_pass','1')");
             
                // $_SESSION['login_id'] = $rd['role_id'];
                 //$_SESSION['user_id'] = $rd['id'];
                 //$result['status']= 'true';
-                 
+                $_SESSION['mgs1'] = 'Your Account has been Created!';    
             }
-            header('Loaction:login.php'); 
+            //  header('Location:login.php'); 
         }
      
 ?>
@@ -78,6 +78,10 @@ if(isset($_POST['submit'])){
                         echo "<p style='color:red;'>".$_SESSION['mgs']."</p>";
                         $_SESSION['mgs'] = '';
                     }?>
+                    <?php if(isset($_SESSION['mgs1'])){
+                        echo "<p style='color:green;'>".$_SESSION['mgs1']."</p>";
+                        $_SESSION['mgs1'] = '';
+                    }?>
                     <div class="form-group">
                         <label for="username" class="" style="color: #BAB9B9;">Name</label>
                         <input type="text" name="username" class="form-control border-secondary" placeholder="Enter username..." required style="border: 0px solid #ccc;">
@@ -108,7 +112,7 @@ if(isset($_POST['submit'])){
                       <label> <input type="checkbox" name="remember" value="remember">  Remember Me</label>
                     </div>
                 <div class="form-group">
-                    <input type="submit" name="submit" id="signup" value="Create Account" style="border: 0px solid #ccc;">
+                    <input class="btn" type="submit" name="submit" id="signup" value="Create Account" style="border: 0px solid #ccc;">
                 </div>
                 <div>
                     <p class="forgot">Already on EM? <a href="login.php" style="color:#A7BF58">Login</a></p>

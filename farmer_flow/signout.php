@@ -38,8 +38,8 @@
                         </div>
                         <div class="row">
                           <div class="col" style="top: 290px;">
-                              <button type="submit" class="website">Go To Website</button>
-                              <button type="submit" class="signin" style="">Sign in Again</button>
+                              <button type="submit" class="btn website">Go To Website</button>
+                              <a href="login.php"><button type="submit" class="btn signin" >Sign in Again</button></a>
                           </div>
                         </div>
                         <div class="row" >

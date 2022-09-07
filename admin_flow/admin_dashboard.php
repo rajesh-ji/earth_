@@ -1,4 +1,4 @@
-<?php include 'header.php'?>
+<?php include('header.php') ?>
  <!-- Page Content Holder -->
  <div class="container-fluid ">
             <div class="row">
@@ -62,7 +62,7 @@
                             <canvas class="my-4 w-100" id="lineChart" style="display: block;width: 1075px;height: 255px;"></canvas>
                         </div>
                    </div>
-<?php include 'footer.php'?>
+<?php include ('footer.php')?>
             
             
 

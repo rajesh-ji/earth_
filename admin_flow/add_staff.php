@@ -48,7 +48,7 @@
                     </div>
                     <div class="col-md-4 ">
                         <a href=""><input class="btn cancel " type="submit" name="" id="" value="cancel" ></a>
-                        <input class="btn save" name="submit" type="submit" value="Save" form="my-form">
+                        <input class="btn save" name="submit" type="submit" value="Save" form="my-form" onclick="send_otp()">
                     </div>
                 </div>
 
@@ -72,14 +72,6 @@
                         <label for="email" >Email</label>
                         <input type="email" class="form-control" placeholder="" name="email" >
                     </div>
-                    <div class="form-group col-md-4">
-                        <label hidden for="pswd" >Location</label>
-                        <input type="hidden" class="form-control" placeholder="" name="unit_loc" >
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label hidden for="pswd" >Number of farmers</label>
-                        <input type="hidden" class="form-control" placeholder="" name="num_farmer" >
-                    </div>
                 </div>  
                  
             </form>
@@ -87,3 +79,22 @@
             </div>
 
 <?php include 'footer.php'; ?>
+<!-- <script>
+function send_otp(){
+	var email=jQuery('#email').val();
+	jQuery.ajax({
+		url:'send_otp.php',
+		type:'post',
+		data:'email='+email,
+		success:function(result){
+			if(result=='yes'){
+				jQuery('.second_box').show();
+				jQuery('.first_box').hide();
+			}
+			if(result=='not_exist'){
+				jQuery('#email_error').html('Please enter valid email');
+			}
+		}
+	});
+}
+</script> -->

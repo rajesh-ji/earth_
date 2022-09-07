@@ -24,13 +24,21 @@
                 
                     <div class="row">
                         <div class="col walletimg clearfix " style="margin-right:30px">
+                                <?php
+                                    $qt = mysqli_query($conn,"SELECT * from gen_info");
+                                    $row = mysqli_fetch_assoc($qt);
+                                    // $record = $row['name']; 
+                                ?>
                             <img class="image-fluid" src="images/Icon.png" alt="" width="45" height="45" >
+                            <div style="margin-top:30px;"><h6>Name: <?php  echo $row['name'];?> </h6></div>
                         </div>
                         <div class="col walletimg " style="margin-right:30px">
                             <img class="image-fluid" src="images/Icon.png" alt="" width="45" height="45" >
+                            <div style="margin-top:30px;"><h6>Email: <?php  echo $row['email'];?> </h6></div>
                         </div>
                         <div class="col walletimg " > 
                             <img class="image-fluid" src="images/Icon.png" alt="" width="45" height="45" >
+                            <div style="margin-top:30px;"><h6>Mobile: <?php  echo $row['phone_num'];?> </h6></div>
                         </div>
 			        </div>
                     

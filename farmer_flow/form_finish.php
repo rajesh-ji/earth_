@@ -1,19 +1,33 @@
-<?php 
+<?php include('config.php');
+session_abort();
+// if(!isset($_SESSION['login_id'])){
+//     header('Location: login.php');
+// }
+ $login_id = $_SESSION['login_id'];
+ $user_id = $_SESSION['user_id']; 
     if(isset($_POST['submit'])){
-        
-        include('config.php');
-         //echo "<script>alert('submit called');</script>";
+        // include('config.php');
         extract($_POST);
-        // $Equipment = $_POST['Equipment'];
-        $query=  mysqli_query($conn, "insert into form_data (erosion, Pest, Costs_Water, Costs_Electric,Costs_average, Costs_overall, Equipment,
-        Custom_equip, facility, wifi, Cell_Service, radio) VALUES ('$erosion','$Pest','$Costs_Water','$Costs_Electric','$Costs_average',
-        '$Costs_overall','$Equipment','$Custom_equip','$facility','$wifi','$Cell_Service','$radio')");
-       // $count = mysqli_num_rows($query);
-        if($query>0){
-            //$rd = mysqli_fetch_assoc($query);
-            header('Location:form_finish.php'); 
+        $check=mysqli_query($conn,"select * from operation_data where user_id='$user_id'");
+        if(mysqli_num_rows($check)>0){
+            // update query
+            $query2 = mysqli_query($conn,"update operation_data set `erosion`='$erosion',Pest='$Pest',Costs_Water='$Costs_Water',
+            Costs_Electric='$Costs_Electric',Costs_average='$Costs_average',Costs_overall='$Costs_overall',Equipment='$Equipment',
+            Custom_equip='$Custom_equip',facility='$facility',wifi='$wifi',Cell_Service='$Cell_Service' WHERE user_id='$user_id'");
+            if($query2){
+                header("location:dashboard.php");
+            }
+        }else{
+            // insert query
+        $query=  mysqli_query($conn, "insert into operation_data (user_id,erosion, Pest, Costs_Water, Costs_Electric,Costs_average, Costs_overall, Equipment, Custom_equip,facility, 
+        wifi, Cell_Service) VALUES ('$user_id','$erosion','$Pest','$Costs_Water','$Costs_Electric','$Costs_average','$Costs_overall','$Equipment','$Custom_equip',
+        '$facility','$wifi','$Cell_Service')");
+        if($query){
+            header("location:dashboard.php");
+        }
         }
         
+       
     }
 ?>
 <?php include 'header.php'; ?>
@@ -53,7 +67,14 @@
                     <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" ></div>
                     <div class="progress-bar" role="progressbar"  aria-valuenow="17" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-
+                <span id="error">
+                    <?php
+                        if (!empty($_SESSION['error_page3'])) {
+                            echo "<p style='color:red;'>".$_SESSION['error_page3']."</p>";
+                        unset($_SESSION['error_page3']);
+                        }
+                    ?>
+                </span>
                 <form class="check" action="form_finish.php" method="post" id="my-form">
                 <div class="row">
                     <div class="col-md-8">

@@ -1,4 +1,14 @@
-<?php include('config.php')?>
+<?php include('config.php');
+if(!isset($_SESSION['login_id'])){
+    header('Location:../farmer_flow/login.php');
+}
+ $login_id = $_SESSION['login_id'];
+ $user_id = $_SESSION['user_id']; 
+
+$query = mysqli_query($conn, "select * from users where id = '$user_id'");
+$rd = mysqli_fetch_assoc($query);
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -33,7 +43,7 @@
         
                 <ul class="list-unstyled components">
                     <li class="active">
-                        <a href="dashboard.php" ><img class="imageset"  width="30px"  height="30px" src="images/sidebar/home.png" alt="" >Dashboard</a>
+                        <a href="admin_dashboard.php" ><img class="imageset"  width="30px"  height="30px" src="images/sidebar/home.png" alt="" >Dashboard</a>
                         
                     </li>
                     <li>
@@ -55,7 +65,7 @@
                        
                     </li>
                     <li>
-                        <a href="signout.php"><img class="imageset" width="30px"  height="30px" src="images/sidebar/power-off.png" alt="">Signout</a>
+                        <a href="../farmer_flow/signout.php"><img class="imageset" width="30px"  height="30px" src="images/sidebar/power-off.png" alt="">Signout</a>
                         
                     </li>
                 </ul>

@@ -1,5 +1,4 @@
-
-  <!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -33,17 +32,17 @@
                         <div class="row thanku">
                             
                               <p>Thank you for being are part of our journey</p>
-                              <p style="margin-left:112px;" >We’ll be waiting for you</p>
+                              <p style="margin-left:115px;" >We’ll be waiting for you</p>
                             
                         </div>
                         <div class="row">
-                          <div class="col" style="top: 290px;">
+                          <div class="col" style="top: 260px;">
                               <button type="submit" class="btn website">Go To Website</button>
-                              <a href="login.php"><button type="submit" class="btn signin" >Sign in Again</button></a>
+                              <a href="logout.php"><button type="submit" class="btn signin" >Sign in Again</button></a>
                           </div>
                         </div>
                         <div class="row" >
-                            <div class="col" style="top: 238px;">
+                            <div class="col" style="top: 282px;">
                             <img src="images/pngegg 2.png" class="float-left" alt="Paris" width="400" height="300"> 
                             <img src="images/pngegg 1.png" class="float-right" alt="Paris" width="400" height="300"> 
                           </div>

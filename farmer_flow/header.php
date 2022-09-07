@@ -1,3 +1,13 @@
+<?php include('config.php');
+if(!isset($_SESSION['login_id'])){
+    header('Location: login.php');
+}
+ $login_id = $_SESSION['login_id'];
+ $user_id = $_SESSION['user_id']; 
+// echo $_SESSION['login_id']; 
+$query = mysqli_query($conn, "select * from users where id = '$user_id'");
+$rd = mysqli_fetch_assoc($query);
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -12,8 +22,7 @@
     <link rel="stylesheet" href="css/wallet.css">
     <link rel="stylesheet" href="css/profile.css">
 
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
-    <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeTTlnyr8DwzMElUS5p5nESnLWORLcWz0&amp;libraries=places"></script>
    
   </head>
   <body>

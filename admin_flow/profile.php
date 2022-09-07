@@ -1,4 +1,15 @@
+<?php
+if(isset($_REQUEST['id'])){
+   
+    $request_user_id = $_REQUEST['id'];
+    $user_role = $_REQUEST['user_role'];
+    // $user_id = $_SESSION['user_id'];
+    $query = mysqli_query($conn, "select * from users where id = '$request_user_id'");
+    $rd = mysqli_fetch_assoc($query);
 
+   
+}
+?>
 <?php  include('header.php');?>
      <!-- Page Content Holder -->
    <div class="container-fluid ">
@@ -40,12 +51,6 @@
                 </div>
                     <div id="nav-tabContent" style="margin: 10px;">
                         <div class="" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                        <?php
-                            $qt = mysqli_query($conn,"SELECT * from gen_info");
-                            $rd = mysqli_fetch_assoc($qt);
-                            // $record = $row['name']; 
-                            
-                         ?>
                             <form action="" class="">
                                 <div class="row">
                                     <div class="col-md-4">
@@ -61,20 +66,7 @@
                                         <input type="text" class="form-control" value="<?php echo $rd['phone_num']?>" name="number" >
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <label for="area" >Land area(area in Acres)</label>
-                                        <input type="text" class="form-control" id="area" value="<?php echo $rd['acreage_add']?>" name="area" >
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label for="c_name" >Farm/company name</label>
-                                        <input type="text" class="form-control" value="<?php echo $rd['farm_name']?>" name="c_name" >
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label for="c_website">Farm/company website address</label>
-                                        <input type="text" class="form-control" value="<?php echo $rd['farm_web']?>" name="c_website" >
-                                    </div>
-                                </div>
+                               
                                 <div class="row">
                                     <div class="col-md-4">
                                         <label for="address" >Address</label>

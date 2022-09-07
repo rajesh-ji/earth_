@@ -14,21 +14,28 @@ if(!isset($_SESSION['login_id'])==''){
      // echo $sql = "select *from users where email = '$email' and role_id  = '1'  ";
        
         
-        $result = mysqli_query($conn, "select *from users where email = '$email' and role_id  = '$login_with' ");
+        $result = mysqli_query($conn, "select * from users where email = '$email' and role_id  = '$login_with' ");
         $count = mysqli_num_rows($result);
        
         if($count>0){
             $rd = mysqli_fetch_assoc($result);
-             // print_r($rd);
+         
             if($rd['password']==$password){
-               
-          $_SESSION['login_id'] = $rd['status'];
-          $_SESSION['user_id'] = $rd['id'];
-          // echo $_SESSION['login_id'];
-          // echo $_SESSION['user_id'];
-               header('Location: dashboard.php');
-             die;
+                if($rd['role_id']==1){   
+                    $_SESSION['login_id'] = $rd['role_id'];
+                    $_SESSION['user_id'] = $rd['id'];
+                    // echo $_SESSION['login_id'];
+                    // echo $_SESSION['user_id'];
+                        header('Location:dashboard.php');
+                        // die;
             }else{
+                if ($rd['role_id']==2){
+                    header('Location:../admin_flow/admin_dashboard.php');
+                    die;
+                }
+            }
+        }
+            else{
                 $_SESSION['error'] = "Password missmatch !";
             }
             
@@ -102,9 +109,9 @@ if(!isset($_SESSION['login_id'])==''){
                     <label for="login" class="" style="color: #BAB9B9;">Select Usertype</label>
                     <select name="login_with" class="form-control login_with" style="background:white;">
                         <option value="">select</option>
-                        <option value="1">Farmer flow</option>
-                        <option value="2">Admin flow</option>
-                        <option value="3">Processing center</option>
+                        <option value="1">Farmer</option>
+                        <option value="2">Admin</option>
+                        <option value="3">Hemplex</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -118,7 +125,7 @@ if(!isset($_SESSION['login_id'])==''){
                     <div class="password-visibility"><i class="fa fa-eye" id="togglePassword" style="color: #A7BF58;"></i></div>
                 </div> 
                 </div>
-                <div class="forgot"><p>Forgot your password?<a href="http://" style="color:#A7BF58">Reset here</a></p></div>
+                <div class="forgot"><p>Forgot your password?<a href="reset_pass.php" style="color:#A7BF58">Reset here</a></p></div>
                 <div class="form-group remember">
                     <label> <input type="checkbox" name="remember" value="remember" >  Remember Me</label>
                 </div>

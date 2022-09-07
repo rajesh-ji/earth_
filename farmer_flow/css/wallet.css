@@ -269,7 +269,7 @@ a .heading{
     color: #A2D134 !important; 
 }
 h6{
-    width: 129px;
+    width: auto;
     height: 20px;
     font-family: 'Montserrat';
     font-style: normal;

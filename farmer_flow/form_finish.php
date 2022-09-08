@@ -56,10 +56,10 @@ session_abort();
             <div class="col-md-12 form">
                 <div class="row progrss">
                     <div class="col-md-8 generalinfo">
-                    <h4 ><a href="" class="info" >General Information/</a><a href="" class="heading1" >heading/</a><a href="" class="heading1" >heading</a></h4>
+                    <h4 ><a href="farm.php" class="info" >General Information/</a><a href="form_continue.php" class="heading1" >Carbon Credits/</a><a href="form_finish.php" class="heading1" >Operation Data</a></h4>
                     </div>
                     <div class="col-md-4">
-                        <a href="form_continue.php"><input class="btn back float-left mr-0" type="submit" name="" id="" value="Back" ></a>
+                        <a href="form_continue.php"><input class="btn back" type="submit" value="Back" style="margin-left:31px;"></a>
                         <input class="btn save" name="submit" type="submit" value="Save & Submit" form="my-form">
                     </div>
                 </div>
@@ -75,48 +75,52 @@ session_abort();
                         }
                     ?>
                 </span>
+                <?php 
+                    $operation_query=mysqli_query($conn, "select * from operation_data where user_id='$user_id'");
+                    $row=mysqli_fetch_assoc($operation_query);
+                ?>
                 <form class="check" action="form_finish.php" method="post" id="my-form">
                 <div class="row">
                     <div class="col-md-8">
                         <label for="name" >Any erosion Prevention Measures taken</label>
-                        <input type="text" class="form-control" id="name" placeholder="" name="erosion">
+                        <input type="text" class="form-control" value="<?php echo $row['erosion'];?>" name="erosion">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4">
                         <label for="name" >Pest measures taken</label>
-                        <input type="text" class="form-control" placeholder="" name="Pest">
+                        <input type="text" class="form-control" value="<?php echo $row['Pest'];?>" name="Pest">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4">
                         <label for="address1" >Daily operational Costs Water ($$)</label>
-                        <input type="text" class="form-control" placeholder="" name="Costs_Water">
+                        <input type="text" class="form-control" value="<?php echo $row['Costs_Water'];?>" name="Costs_Water">
                     </div>
                     <div class="col-md-4">
                         <label for="address1">Daily operational Costs Electric ($$)</label>
-                        <input type="text" class="form-control" placeholder="" name="Costs_Electric">
+                        <input type="text" class="form-control" value="<?php echo $row['Costs_Electric'];?>" name="Costs_Electric">
                     </div>
                     <div class="col-md-4">
                         <label for="address1">Daily operational Costs average ($$)</label>
-                        <input type="text" class="form-control" placeholder="" name="Costs_average">
+                        <input type="text" class="form-control" value="<?php echo $row['Costs_average'];?>" name="Costs_average">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4">
                         <label for="text">Daily Production Costs overall ($$)</label>
-                        <input type="text" class="form-control" id="name2" placeholder="" name="Costs_overall">
+                        <input type="text" class="form-control" value="<?php echo $row['Costs_overall'];?>" name="Costs_overall">
                     </div>
                     <div class="col-md-4">
                         <label for="text">Type of Equipment</label>
-                        <select type="text" class="form-control" name="Equipment" id="">
+                        <select class="form-control" name="Equipment">
                             <option value="">Choose</option>
-                            <option value="">demo2</option>
+                            <option value="1">demo2</option>
                         </select>
                     </div>
                     <div class="col-md-4">
                         <label for="text" >Custom Combining Equipment</label>
-                        <input type="text" class="form-control" placeholder="" name="Custom_equip" >
+                        <input type="text" class="form-control" value="<?php echo $row['Custom_equip'];?>" name="Custom_equip" >
                     </div>
                 </div>
                
@@ -124,7 +128,7 @@ session_abort();
                 <div class="row">
                     <div class="col-md-8">
                         <label for="company_name" >Pick up facility if other than farm address</label>
-                        <input type="text" class="form-control" id="" placeholder="" name="facility" >
+                        <input type="text" class="form-control" value="<?php echo $row['facility'];?>" name="facility" >
                     </div>
                 </div>
                 <div><h4 style="font-family: 'Helvetica';font-style: normal;font-weight: 700;font-size: 12px;">COMMUNICATION NETWORK</h4></div>

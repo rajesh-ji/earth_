@@ -41,7 +41,7 @@
                     <div id="nav-tabContent" style="margin: 10px;">
                         <div class="" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                         <?php
-                            $qt = mysqli_query($conn,"SELECT * from gen_info");
+                            $qt = mysqli_query($conn,"SELECT * from gen_info where user_id='$user_id'");
                             $rd = mysqli_fetch_assoc($qt);
                             // $record = $row['name']; 
                             

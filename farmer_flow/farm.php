@@ -11,7 +11,7 @@ session_abort();
         $check=mysqli_query($conn,"select * from gen_info where user_id='$user_id'");
         if(mysqli_num_rows($check)>0){
             // update query
-            $query2 = mysqli_query($conn,"UPDATE `gen_info` SET `name`='$name',`phone_num`='$phone_num',`email`='$email',`address`='$address',`acreage_add`='$acreage_add',
+            $query2 = mysqli_query($conn,"UPDATE `gen_info` SET `name`='$name',`phone_num`='$phone_num',`email`='$email',`address`='$address',`country`='$country',`state`='$state',`city`='$city',`pin`='$pin',`acreage_add`='$acreage_add',
             `sec_cont`='$sec_cont',`phone_sec`='$phone_sec',`email_sec`='$email_sec',`farm_name`='$farm_name',`farm_web`='$farm_web',`farm_fb`='$farm_fb',`farm_insta`='$farm_insta',
             `num_acres`='$num_acres' WHERE user_id='$user_id'");
             if($query2){
@@ -52,13 +52,13 @@ session_abort();
                 
             </div>
             <h6>Edit/Update Farm</h6>
-            <?php $q1= mysqli_query($conn, "select * from gen_info");
+            <?php $q1= mysqli_query($conn, "select * from gen_info where user_id='$user_id'");
                     $row= mysqli_fetch_assoc($q1)
             ?>
             <div class="col-md-12 form">
                 <div class="row progrss">
                     <div class="col-md-8 generalinfo">
-                    <h4 ><a href="" class="info" >General Information/</a><a href="" class="heading1" >heading/</a><a href="" class="heading1" >heading</a></h4>
+                    <h4 ><a href="farm.php" class="info" >General Information/</a><a href="form_continue.php" class="heading1" >Carbon Credits/</a><a href="form_finish.php" class="heading1" >Operation Data</a></h4>
                     </div>
                     <div class="col-md-4">
                        <input class="btn save" name="submit" type="submit" value="Save & Continue" form="my-form">
@@ -97,9 +97,11 @@ session_abort();
                     <div class="form-group col-md-4" >
                         <label for="address" >Address</label>
                         <input type="text" class="form-control" value="<?php echo $row['address'];?>" name="address" id="searchTextField"   >
-                        <!-- <input type="hidden" id="pin" name="pin" /> -->
-                        
                     </div>
+                    <table class="table">
+                        <tbody id="body">
+                        </tbody>
+                    </table>
                 </div>
                 <div class="row">
                     <div class="form-group col-md-8">
@@ -145,7 +147,8 @@ session_abort();
                         <input type="number" class="form-control" value="<?php echo $row['num_acres'];?>" name="num_acres"  >
                     </div>
                 </div>
-                <!-- <input type="hidden" id="userId"  >  -->
+                
+                <input type="hidden" id="user_id"  >
             </form>
 
             </div>
@@ -168,7 +171,6 @@ session_abort();
   google.maps.event.addDomListener(window, "load", function () {
     var places = new google.maps.places.Autocomplete(
       document.getElementById("searchTextField")
-      
     );
     google.maps.event.addListener(places, "place_changed", function () {
       var place = places.getPlace();
@@ -201,11 +203,39 @@ session_abort();
               console.log(country)
               console.log(state)
               console.log(city)
-			    console.log(pin)
-                document.getElementById("demo").innerHTML = pin.type;
+			  console.log(pin)
+              let field = `
+            <td style="border:none;">
+			<div class="row">
+                    <div class="form-group col-md-4" >
+                        <label for="Country" >Country</label>
+                        <input type="text" class="form-control" value="${country}" name="country"    >
+                    </div>
+            
+                    <div class="form-group col-md-4" >
+                        <label for="State" >State</label>
+                        <input type="text" class="form-control" value="${state}" name="state"  >
+                    </div>
+            
+                    <div class="form-group col-md-4" >
+                        <label for="City" >City</label>
+                        <input type="text" class="form-control" value="${city}" name="city"  >
+                    </div>
+            
+                    <div class="form-group col-md-4" >
+                        <label for="Zip" >Zip</label>
+                        <input type="text" class="form-control" value="${pin}" name="pin"  >
+                    </div>
+            </div>
+			<td>	
+    
+            
+             `
+             $("#body").append(field)
           }
         }
       });
     });
   });
 </script>
+

@@ -25,7 +25,7 @@
                     <div class="row">
                         <div class="col walletimg clearfix " style="margin-right:30px">
                                 <?php
-                                    $qt = mysqli_query($conn,"SELECT * from gen_info");
+                                    $qt = mysqli_query($conn,"SELECT * from gen_info where user_id='$user_id'");
                                     $row = mysqli_fetch_assoc($qt);
                                     // $record = $row['name']; 
                                 ?>

@@ -11,7 +11,7 @@ if(!isset($_SESSION['login_id'])==''){
         extract($_POST);
        // print_r($_POST);
        // die;
-     // echo $sql = "select *from users where email = '$email' and role_id  = '1'  ";
+     // echo $sql = "select *from users where email = '$email' and role_id  = '2'  ";
        
         
         $result = mysqli_query($conn, "select * from users where email = '$email' and role_id  = '$login_with' ");
@@ -30,6 +30,8 @@ if(!isset($_SESSION['login_id'])==''){
                         // die;
             }else{
                 if ($rd['role_id']==2){
+                    $_SESSION['login_id'] = $rd['role_id'];
+                    $_SESSION['user_id'] = $rd['id'];
                     header('Location:../admin_flow/admin_dashboard.php');
                     die;
                 }

@@ -4,7 +4,7 @@ if(!isset($_SESSION['login_id'])){
 }
  $login_id = $_SESSION['login_id'];
  $user_id = $_SESSION['user_id']; 
-
+//  echo $_SESSION['login_id']; 
 $query = mysqli_query($conn, "select * from users where id = '$user_id'");
 $rd = mysqli_fetch_assoc($query);
 ?>

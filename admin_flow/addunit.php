@@ -1,18 +1,4 @@
-<?php 
-    if(isset($_POST['submit'])){
-        
-        include('config.php');
-         //echo "<script>alert('submit called');</script>";
-        extract($_POST);
-        $query=  mysqli_query($conn, "insert into add_unit (f_name,l_name) VALUES ('$f_name','$l_name')");
-       // $count = mysqli_num_rows($query);
-        if($query>0){
-            //$rd = mysqli_fetch_assoc($query);
-            header('Location:hemplex.php'); 
-        }
-        
-    }
-?>
+<?php include 'mail.php'; ?>
 <?php include 'header.php'; ?>
    <!-- Page Content Holder -->
    <div class="container-fluid ">
@@ -48,15 +34,15 @@
                     </div>
                     <div class="col-md-4 ">
                         <a href=""><input class="btn cancel " type="submit" name="" id="" value="cancel" ></a>
-                        <input class="btn save" name="submit" type="submit" value="Save" form="my-form">
+                        <input class="btn save" name="submit" type="submit" value="Save" form="my-form" onclick="send_otp()">
                     </div>
                 </div>
 
-                <form class="check" action="addunit.php" method="post" id="my-form">
+                <form class="check" action="" method="post" id="my-form">
                 <div class="row">
                     <div class="form-group col-md-4" >
                         <label for="name" >First Name</label>
-                        <input type="text" class="form-control" placeholder="" name="f_name" >
+                        <input type="text" class="form-control" placeholder="" name="name" >
                     </div>
                     <div class="form-group col-md-4" >
                         <label for="name" >Last Name</label>
@@ -70,15 +56,7 @@
                 <div class="row">
                     <div class="form-group col-md-4" >
                         <label for="email" >Email</label>
-                        <input type="email" class="form-control" placeholder="" name="email" >
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label hidden for="pswd" >Location</label>
-                        <input type="hidden" class="form-control" placeholder="" name="unit_loc" >
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label hidden for="pswd" >Number of farmers</label>
-                        <input type="hidden" class="form-control" placeholder="" name="num_farmer" >
+                        <input type="email" class="form-control" id="email" placeholder="" name="email" >
                     </div>
                 </div>  
                  
@@ -87,3 +65,38 @@
             </div>
 
 <?php include 'footer.php'; ?>
+<script>
+function send_otp(){
+	var email=jQuery('#email').val();
+	jQuery.ajax({
+		url:'mail.php',
+		type:'post',
+		data:'email='+email,
+		success:function(result){
+			if(result=='yes'){
+				window.location='admin_dashboard.php'
+			}
+			if(result=='not_exist'){
+				jQuery('#email_error').html('Please enter valid email');
+			}
+		}
+	});
+}
+
+// function submit_otp(){
+// 	var otp=jQuery('#otp').val();
+// 	jQuery.ajax({
+// 		url:'check_otp.php',
+// 		type:'post',
+// 		data:'otp='+otp,
+// 		success:function(result){
+// 			if(result=='yes'){
+// 				window.location='dashboard.php'
+// 			}
+// 			if(result=='not_exist'){
+// 				jQuery('#otp_error').html('Please enter valid otp');
+// 			}
+// 		}
+// 	});
+// }
+</script>
